@@ -23,7 +23,7 @@ lerna-debug.log*
 .classpath
 .c9/
 *.launch
-.settings/
+.settings/git branch -M master
 *.sublime-workspace
 
 # IDE - VSCode
@@ -32,3 +32,5 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+./docker-compose.yml
+

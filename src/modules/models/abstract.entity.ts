@@ -1,24 +1,24 @@
-'use strict';
+'use strict'
 
 import {
   CreateDateColumn,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
+} from 'typeorm'
 
 export abstract class AbstractEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id: string
 
   @CreateDateColumn({
     type: 'datetime',
     name: 'created_at',
   })
-  createdAt: Date;
+  createdAt: Date
 
   @UpdateDateColumn({
     type: 'datetime',
     name: 'updated_at',
   })
-  updatedAt: Date;
+  updatedAt: Date
 }

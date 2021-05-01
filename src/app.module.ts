@@ -1,24 +1,11 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { IndicatorDataModule } from './modules/indicator-data/indicator-data.module';
-import {TypeOrmModule} from '@nestjs/typeorm';
-import { UsersModule } from './users/users.module';
+import { Module } from '@nestjs/common'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { getDbConfig } from './config/db.config'
+import { DataModule } from './data/data.module'
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
-    type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: 'secret',
-    database: 'greenhouse',
-    synchronize: true,
-    autoLoadEntities: true
-  }),
-  IndicatorDataModule,
-  UsersModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [TypeOrmModule.forRoot(getDbConfig()), DataModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
