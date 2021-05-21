@@ -11,13 +11,13 @@ export abstract class AbstractEntity {
   id: string
 
   @CreateDateColumn({
-    type: 'datetime',
+    type: 'time with time zone',
     name: 'created_at',
   })
   createdAt: Date
 
   @UpdateDateColumn({
-    type: 'datetime',
+    type: 'time with time zone',
     name: 'updated_at',
   })
   updatedAt: Date
