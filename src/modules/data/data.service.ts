@@ -6,6 +6,7 @@ import { Datum } from './entities/datum.entity'
 @Injectable()
 export class DataService {
   constructor(private dataRepository: DataRepository) {}
+
   async create(createDatumDto: CreateDatumDto): Promise<Datum> {
     return this.dataRepository.create(createDatumDto)
   }
