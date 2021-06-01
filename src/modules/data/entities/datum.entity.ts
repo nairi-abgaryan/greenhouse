@@ -1,9 +1,10 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { PlantEntity } from '../../greenhouse/entities/plant.entity'
-import { IndicatorDataTypes } from '../../greenhouse/interfaces'
+import { SensorTypes } from '../../greenhouse/interfaces'
+import { AbstractEntity } from '../../../models/abstract.entity'
 
 @Entity({ name: 'datum' })
-export class Datum {
+export class Datum extends AbstractEntity {
   @PrimaryGeneratedColumn('uuid')
   uuid: string
 
@@ -15,7 +16,7 @@ export class Datum {
 
   @Column({
     type: 'enum',
-    enum: IndicatorDataTypes,
+    enum: SensorTypes,
   })
-  IndicatorDataTypes: IndicatorDataTypes
+  IndicatorDataTypes: SensorTypes
 }

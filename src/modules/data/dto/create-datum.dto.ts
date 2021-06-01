@@ -1,6 +1,6 @@
-import { IndicatorDataTypes } from '../../greenhouse/interfaces'
+import { SensorTypes } from '../../greenhouse/interfaces'
 
 export class CreateDatumDto {
   uuid: string
-  type: IndicatorDataTypes.Temperature
+  type: SensorTypes.Temperature
 }
