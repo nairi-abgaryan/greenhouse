@@ -8,7 +8,7 @@ import {
 
 export abstract class AbstractEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string
+  uuid: string
 
   @CreateDateColumn({
     type: 'time with time zone',
