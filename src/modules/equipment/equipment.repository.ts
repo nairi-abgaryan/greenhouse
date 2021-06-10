@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm'
 import { EntityRepository } from 'typeorm/decorator/EntityRepository'
-import { Equipment } from './entities/equipment'
+import { EquipmentEntity } from './entities/equipment.entity'
 
-@EntityRepository(Equipment)
-export class EquipmentRepository extends Repository<Equipment> {}
+@EntityRepository(EquipmentEntity)
+export class EquipmentRepository extends Repository<EquipmentEntity> {}

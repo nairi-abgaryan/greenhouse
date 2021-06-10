@@ -10,13 +10,11 @@ import { ApiBearerAuth, ApiOkResponse } from '@nestjs/swagger'
 
 import { AuthUser } from '../../decorators/auth-user.decorator'
 import { AuthGuard } from '../../guards/auth.guard'
-import { RolesGuard } from '../../guards/roles.guard'
 import { UserEntity } from './user.entity'
 import { AuthUserInterceptor } from '../../interceptors/auth-user-interceptor.service'
-import { UserResponse } from './models/UserResponse'
 
 @Controller('users')
-@UseGuards(AuthGuard, RolesGuard)
+@UseGuards(AuthGuard)
 @UseInterceptors(AuthUserInterceptor)
 @ApiBearerAuth()
 export class UserController {
@@ -30,8 +28,6 @@ export class UserController {
   @HttpCode(HttpStatus.OK)
   @UseGuards(AuthGuard)
   @UseInterceptors(AuthUserInterceptor)
-  @ApiBearerAuth()
-  @ApiOkResponse({ type: UserResponse, description: 'current user info' })
   async getCurrentUser(@AuthUser() user: UserEntity) {
     return user
   }

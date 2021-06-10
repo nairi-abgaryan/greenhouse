@@ -9,4 +9,4 @@ import { TypeOrmModule } from '@nestjs/typeorm'
   controllers: [NotificationController],
   providers: [NotificationService],
 })
-export class EquipmentModule {}
+export class NotificationModule {}

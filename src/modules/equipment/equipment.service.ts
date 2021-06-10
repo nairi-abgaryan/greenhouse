@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { CreateEquipmentDto } from './dto/create-equipment.dto'
 import { EquipmentRepository } from './equipment.repository'
-import { Equipment } from './entities/equipment'
+import { EquipmentEntity } from './entities/equipment.entity'
 
 @Injectable()
 export class EquipmentService {
@@ -9,7 +9,7 @@ export class EquipmentService {
 
   async addEquipment(
     createEquipmentDto: CreateEquipmentDto,
-  ): Promise<Equipment> {
+  ): Promise<EquipmentEntity> {
     return this.equipmentRepository.create(createEquipmentDto)
   }
 }

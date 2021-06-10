@@ -1,8 +1,9 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 import { Status } from '../interfaces'
+import { Datum } from '../../data/entities/datum.entity'
 
 @Entity({ name: 'equipments' })
-export class Equipment {
+export class EquipmentEntity {
   @PrimaryGeneratedColumn('uuid')
   uuid: string
 
@@ -14,4 +15,6 @@ export class Equipment {
     enum: Status,
   })
   status: string
+
+  datum: Datum
 }

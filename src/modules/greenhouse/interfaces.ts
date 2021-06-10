@@ -1,4 +1,4 @@
-export enum IndicatorDataTypes {
+export enum SensorTypes {
   Temperature = 'Temperature',
   Light = 'Light',
   CO2 = 'CO2',

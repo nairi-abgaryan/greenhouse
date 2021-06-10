@@ -5,6 +5,8 @@ import { GreenhouseModule } from './modules/greenhouse/greenhouse.module'
 import { EquipmentModule } from './modules/equipment/equipment.module'
 import { getDbConfig } from './config/db.config'
 import * as dotenv from 'dotenv'
+import { AuthModule } from './modules/auth/auth.module'
+import { NotificationModule } from './modules/notification/notification.module'
 dotenv.config()
 
 @Module({
@@ -13,6 +15,8 @@ dotenv.config()
     DataModule,
     GreenhouseModule,
     EquipmentModule,
+    AuthModule,
+    NotificationModule,
   ],
   controllers: [],
   providers: [],

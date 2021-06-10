@@ -14,6 +14,7 @@ import { EnvConditionsRepository } from './repository/env-conditions.repository'
       EnvConditionsRepository,
     ]),
   ],
+  exports: [GreenhouseRepository],
   controllers: [GreenhouseController],
   providers: [GreenhouseService],
 })

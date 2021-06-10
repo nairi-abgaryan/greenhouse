@@ -11,12 +11,15 @@ export class Datum extends AbstractEntity {
   @Column()
   value: number
 
-  @ManyToOne(() => PlantEntity, (p) => p.datum)
-  plant: PlantEntity
+  @Column()
+  greenhouse_uuid: string
+
+  @Column()
+  equipment_uuid: string
 
   @Column({
     type: 'enum',
     enum: SensorTypes,
   })
-  IndicatorDataTypes: SensorTypes
+  sensorTypes: SensorTypes
 }

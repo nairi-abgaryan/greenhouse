@@ -1,11 +1,22 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
 import { PlantEntity } from './plant.entity'
 import { AbstractEntity } from '../../../models/abstract.entity'
+import { UserEntity } from '../../user/user.entity'
+import { Datum } from '../../data/entities/datum.entity'
 
-@Entity({ name: 'greenhouse' })
+@Entity({ name: 'greenhouses' })
 export class GreenhouseEntity extends AbstractEntity {
   @PrimaryGeneratedColumn('uuid')
   uuid: string
+
+  @Column()
+  id: number
 
   @Column()
   name: string
@@ -14,11 +25,13 @@ export class GreenhouseEntity extends AbstractEntity {
   address: string
 
   @Column()
-  location: string
+  location?: string
 
-  @Column()
-  owner: string
+  @ManyToOne(() => UserEntity, '', {
+    lazy: true,
+  })
+  owner: UserEntity
 
-  @ManyToOne(() => GreenhouseEntity, '')
+  @ManyToOne(() => PlantEntity, '')
   plant: PlantEntity
 }

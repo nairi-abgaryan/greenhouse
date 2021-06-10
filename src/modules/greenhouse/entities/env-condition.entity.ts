@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { PlantEntity } from './plant.entity'
-import { IndicatorDataTypes } from '../interfaces'
+import { SensorTypes } from '../interfaces'
 
 @Entity({ name: 'env-conditions' })
 export class EnvConditionEntity {
@@ -15,10 +15,10 @@ export class EnvConditionEntity {
 
   @Column({
     type: 'enum',
-    enum: IndicatorDataTypes,
+    enum: SensorTypes,
   })
-  type: IndicatorDataTypes
+  type: SensorTypes
 
-  @ManyToOne(() => PlantEntity, (plant) => plant.environmentConditions)
+  @ManyToOne(() => PlantEntity, (plant) => plant.envConditionEntities)
   plant: PlantEntity
 }
